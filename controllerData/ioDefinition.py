@@ -138,7 +138,7 @@ class InputOutput:
                 self.controller.errors['analogOut0'] = "Not connected."
         elif name == '1':
             try:
-                self.tfDevices[self.tfMap['analogOut1']].set_output_voltage(value)
+                self.tfDevices[self.tfMap['analogOut1']].set_output_voltage(value * 1000)
             except (AttributeError, KeyError):
                 self.controller.errors['analogOut1'] = "Not connected."
             except tfError as exc:

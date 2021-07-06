@@ -113,7 +113,7 @@ class Test_handler_run():
     def test_Exception(self, ch, raise_Exception):
         ch.controller.errors = {}
         ch.run()
-        assert 'intercom' in ch.controller.erros.keys()
+        assert 'intercom' in ch.controller.errors.keys()
         assert not ch.connection.open
 
     @pytest.mark.parametrize('typIn, contentIn, answer', [('ACK', None, ['ERR', "Unknown command".encode('ascii')]),
